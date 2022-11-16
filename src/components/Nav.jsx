@@ -30,6 +30,22 @@ const Nav = () => {
             <span className="cart__length">2</span>
           </li>
         </ul>
+        <div className="menu__backdrop">
+            <button className="btn__menu btm__menu--close">
+                <FontAwesomeIcon icon="times" />
+                <ul className="menu__links">
+                    <li className="menu__list">
+                        <a href="/" className="menu__link">Home</a>
+                    </li>
+                    <li className="menu__list">
+                        <a href="/books" className="menu__link">Books</a>
+                    </li>
+                    <li className="menu__list">
+                        <a href="/cart" className="menu__link">Cart</a>
+                    </li>
+                </ul>
+            </button>
+        </div>
       </div>
     </nav>
   );
