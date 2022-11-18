@@ -378,7 +378,7 @@ FEATURES
   transition: all 300ms ease;
 }
 
-.book:hover .book__img{
+.book__img--wrapper:hover .book__img{
   scale: 1.05;
 }
 
