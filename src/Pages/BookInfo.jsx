@@ -21,7 +21,7 @@ const BookInfo = ({ books, addToCart, cart }) => {
     <div id="books__body">
       <main id="books__main">
         <div className="books__container">
-          <div className="books__row">
+          <div className="row">
             <div className="book__selected--top">
               <Link to="/books" className="book__link">
                 <FontAwesomeIcon icon="arrow-left" />
