@@ -1,17 +1,13 @@
-import { faTrashRestoreAlt } from "@fortawesome/free-solid-svg-icons";
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 const Cart = ({ cart, changeQuantity }) => {
-  let price = 0;
-
   const total = () => {
+    let price = 0;
     cart.forEach((item) => {
       price += +((item.salePrice || item.originalPrice) * item.quantity);
     });
-    return price.toFixed(2);
+    return price;
   };
-
-  
 
   return (
     <div id="totals__body">
@@ -73,11 +69,11 @@ const Cart = ({ cart, changeQuantity }) => {
             <div className="total">
               <div className="total__item total__sub-total">
                 <span>Subtotal</span>
-                <span>$</span>
+                <span>${(total() * 0.9).toFixed(2)}</span>
               </div>
               <div className="total__item total__tax">
                 <span>Tax</span>
-                <span>$1.00</span>
+                <span>${(total() * 0.1).toFixed(2)}</span>
               </div>
               <div className="total__item total__price">
                 <span>Total</span>
