@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cart = ({ cart }) => {
+const Cart = ({ cart, changeQuantity}) => {
   return (
     <div id="totals__body">
       <main className="books__main">
@@ -16,7 +16,7 @@ const Cart = ({ cart }) => {
                 <span className="cart__total">Price</span>
               </div>
               <div className="cart__body">
-                {cart.map((book, changeQuantity) => {
+                {cart.map((book) => {
                   return (
                     <div className="cart__item">
                       <div className="cart__book">
