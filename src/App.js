@@ -14,6 +14,9 @@ function App() {
   function addToCart(book) {
     setCart([...cart, { ...book, quantity: 1 }]);
   }
+  function removeFromCart(book) {
+    setCart([...cart, { null}]);
+  }
 
   function changeQuantity(book, quantity) {
     setCart(
@@ -41,7 +44,7 @@ function App() {
           />
           <Route
             path="/cart"
-            element={<Cart cart={cart} changeQuantity={changeQuantity} />}
+            element={<Cart cart={cart} changeQuantity={changeQuantity} remove={removeFromCart} />}
           />
         </Routes>
         <Footer />
@@ -52,4 +55,4 @@ function App() {
 
 export default App;
 
-// MINUTE 1:56:03
+// MINUTE 2:18:17
