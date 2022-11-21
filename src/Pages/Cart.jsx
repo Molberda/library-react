@@ -69,11 +69,11 @@ const Cart = ({ cart, changeQuantity }) => {
             <div className="total">
               <div className="total__item total__sub-total">
                 <span>Subtotal</span>
-                <span>${(total() * 0.9).toFixed(2)}</span>
+                <span>${(total() * 0.81).toFixed(2)}</span>
               </div>
               <div className="total__item total__tax">
                 <span>Tax</span>
-                <span>${(total() * 0.1).toFixed(2)}</span>
+                <span>${(total() * 0.19).toFixed(2)}</span>
               </div>
               <div className="total__item total__price">
                 <span>Total</span>
