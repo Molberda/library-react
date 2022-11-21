@@ -15,6 +15,10 @@ function App() {
     setCart([...cart, { ...book, quantity: 1 }]);
   }
 
+  function removeItem(item){
+    console.log('remove', item)
+  }
+
   function changeQuantity(book, quantity) {
     setCart(
       cart.map((item) =>
@@ -24,7 +28,6 @@ function App() {
   }
 
   useEffect(() => {
-    console.log(cart);
   }, [cart]);
   return (
     <Router>
@@ -41,7 +44,7 @@ function App() {
           />
           <Route
             path="/cart"
-            element={<Cart cart={cart} changeQuantity={changeQuantity}/>}
+            element={<Cart cart={cart} changeQuantity={changeQuantity} removeItem={removeItem}/>}
           />
         </Routes>
         <Footer />
