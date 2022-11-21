@@ -16,7 +16,7 @@ function App() {
   }
 
   function removeItem(item){
-    console.log('remove', item)
+    setCart(cart.filter(book => book.id !== item.id))
   }
 
   function changeQuantity(book, quantity) {
