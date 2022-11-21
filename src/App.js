@@ -16,9 +16,11 @@ function App() {
   }
 
   function changeQuantity(book, quantity) {
-    setCart(cart.map(item => {
-     return item.id === book.id ? {...item, quantity: +quantity} : item
-    }))
+    setCart(
+      cart.map((item) =>
+        item.id === book.id ? { ...item, quantity: +quantity } : item
+      )
+    );
   }
 
   useEffect(() => {
@@ -31,8 +33,16 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/books" element={<Books books={books} />} />
-          <Route path="/books/:id" element={<BookInfo books={books} addToCart={addToCart} cart={cart} />}/>
-          <Route path="/cart" element={<Cart cart={cart} changeQuantity={changeQuantity}/>} />
+          <Route
+            path="/books/:id"
+            element={
+              <BookInfo books={books} addToCart={addToCart} cart={cart} />
+            }
+          />
+          <Route
+            path="/cart"
+            element={<Cart cart={cart} changeQuantity={changeQuantity} />}
+          />
         </Routes>
         <Footer />
       </div>
