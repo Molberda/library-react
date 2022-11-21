@@ -1,6 +1,18 @@
-import React from "react";
+import { faTrashRestoreAlt } from "@fortawesome/free-solid-svg-icons";
+import React, { useEffect, useState } from "react";
 
-const Cart = ({ cart, changeQuantity}) => {
+const Cart = ({ cart, changeQuantity }) => {
+  let price = 0;
+
+  const total = () => {
+    cart.forEach((item) => {
+      price += +((item.salePrice || item.originalPrice) * item.quantity);
+    });
+    return price.toFixed(2);
+  };
+
+  
+
   return (
     <div id="totals__body">
       <main className="books__main">
@@ -26,8 +38,12 @@ const Cart = ({ cart, changeQuantity}) => {
                           className="cart__book--img"
                         />
                         <div className="cart__book--info">
-                          <span className="cart__book--title">{book.title}</span>
-                          <span className="cart__book--price">${(book.salePrice || book.originalPrice).toFixed(2)}</span>
+                          <span className="cart__book--title">
+                            {book.title}
+                          </span>
+                          <span className="cart__book--price">
+                            ${(book.salePrice || book.originalPrice).toFixed(2)}
+                          </span>
                           <button className="cart__book--remove">Remove</button>
                         </div>
                       </div>
@@ -38,10 +54,17 @@ const Cart = ({ cart, changeQuantity}) => {
                           max={99}
                           value={book.quantity}
                           className="cart__input"
-                          onChange={(event) => changeQuantity(book, event.target.value)}
+                          onChange={(event) =>
+                            changeQuantity(book, event.target.value)
+                          }
                         />
                       </div>
-                      <div className="cart__total">${((book.salePrice || book.originalPrice) * book.quantity).toFixed(2)}</div>
+                      <div className="cart__total">
+                        $
+                        {(
+                          (book.salePrice || book.originalPrice) * book.quantity
+                        ).toFixed(2)}
+                      </div>
                     </div>
                   );
                 })}
@@ -50,7 +73,7 @@ const Cart = ({ cart, changeQuantity}) => {
             <div className="total">
               <div className="total__item total__sub-total">
                 <span>Subtotal</span>
-                <span>$9.00</span>
+                <span>$</span>
               </div>
               <div className="total__item total__tax">
                 <span>Tax</span>
@@ -58,7 +81,7 @@ const Cart = ({ cart, changeQuantity}) => {
               </div>
               <div className="total__item total__price">
                 <span>Total</span>
-                <span>$10.00</span>
+                <span>${total()}</span>
               </div>
               <button
                 className="btn btn__checkout no-cursor"
