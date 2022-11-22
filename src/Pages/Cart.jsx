@@ -1,5 +1,6 @@
 import React from "react";
-import EmptyCart from '../assets/empty__cart.svg'
+import { Link } from "react-router-dom";
+import EmptyCart from "../assets/empty__cart.svg";
 
 const Cart = ({ cart, changeQuantity, removeItem }) => {
   const total = () => {
@@ -41,7 +42,12 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                           <span className="cart__book--price">
                             ${(book.salePrice || book.originalPrice).toFixed(2)}
                           </span>
-                          <button className="cart__book--remove" onClick={() => removeItem(book)}>Remove</button>
+                          <button
+                            className="cart__book--remove"
+                            onClick={() => removeItem(book)}
+                          >
+                            Remove
+                          </button>
                         </div>
                       </div>
                       <div className="cart__quantity">
@@ -68,6 +74,10 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
               </div>
               <div className="cart__empty">
                 <img src={EmptyCart} alt="" className="cart__empty--img" />
+                <h2>You don't have any books in your cart!!</h2>
+                <Link to="/books">
+                  <button className="btn">Browse Books</button>
+                </Link>
               </div>
             </div>
             <div className="total">
