@@ -80,7 +80,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
                 </Link>
               </div>
             </div>
-            <div className="total">
+           {cart.length > 0 && <div className="total">
               <div className="total__item total__sub-total">
                 <span>Subtotal</span>
                 <span>${(total() * 0.81).toFixed(2)}</span>
@@ -101,7 +101,7 @@ const Cart = ({ cart, changeQuantity, removeItem }) => {
               >
                 Proceed to checkout
               </button>
-            </div>
+            </div>}
           </div>
         </div>
       </main>
