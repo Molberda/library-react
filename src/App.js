@@ -27,6 +27,10 @@ function App() {
     );
   }
 
+  function numberOfItems(){
+    let counter = 0
+  }
+
   useEffect(() => {
   }, [cart]);
   return (
@@ -55,4 +59,4 @@ function App() {
 
 export default App;
 
-// MINUTE 2:21:17
+// MINUTE 2:25:48
