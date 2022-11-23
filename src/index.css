@@ -396,11 +396,13 @@ FEATURES
   max-width: 250px;
   background-color: rgb(204, 204, 204);
   margin-bottom: 8px;
+  aspect-ratio: 1 / 1.5;
 }
 
 .skeleton {
   background-color: rgb(227, 227, 227) !important;
   margin-bottom: 8px;
+  max-width: 250px;
 }
 
 .book__title--skeleton {
@@ -409,12 +411,12 @@ FEATURES
 }
 
 .book__rating--skeleton {
-  width: 100px;
+  width: 50%;
   height: 19px;
 }
 
 .book__price--skeleton {
-  width : 200px;
+  width :90%;
   height: 19px;
 }
 
