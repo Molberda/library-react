@@ -4,6 +4,10 @@ import Rating from "./Rating";
 import Price from "./Price";
 
 const Book = ({ book }) => {
+  function imageLoaded(){
+    
+  }
+
   return (
     <div className="book">
       <Link to={`/books/${book.id}`}>
@@ -12,6 +16,7 @@ const Book = ({ book }) => {
             src={book.url}
             alt=""
             className="book__img"
+            onLoad={imageLoaded}
           />
         </figure>
       </Link>
